@@ -1,8 +1,2294 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
+<!-- Agregar Tailwind CSS -->
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+
+<style>
+    .container{
+        max-width:100%;
+        font-family: "Urbanist", sans-serif;
+        font-optical-sizing: auto;
+        font-style: normal;
+
+    }
+    .div {
+        background-color: #fafbff;
+        display: flex;
+        flex-direction: column;
+    }
+
+
+    .div-5 {
+        display: flex;
+        gap: 20px;
+        justify-content: space-between;
+    }
+
+    @@media (max-width: 2048px) {
+        .div-5 {
+            white-space: initial;
+        }
+    }
+
+    .div-6 {
+        color: #00255b;
+        font-family: Urbanist, sans-serif;
+        font-weight: 700;
+    }
+
+    .div-7 {
+        font-family: Lexend Deca, sans-serif;
+    }
+
+    .div-8 {
+        font-family: Lexend Deca, sans-serif;
+    }
+
+    .div-9 {
+        font-family: Lexend Deca, sans-serif;
+    }
+
+    .div-10 {
+        align-self: stretch;
+        display: flex;
+        gap: 12px;
+        font-size: 16px;
+        text-align: center;
+        line-height: 137.5%;
+        margin: auto 0;
+    }
+
+    .div-11 {
+        border-radius: 8px;
+        display: flex;
+        flex-direction: column;
+        color: #00255b;
+        justify-content: center;
+    }
+
+    .div-12 {
+        font-family: Urbanist, sans-serif;
+        border-radius: 5px;
+        border-color: rgba(0, 37, 91, 1);
+        border-style: solid;
+        border-width: 2px;
+        justify-content: center;
+        padding: 17px 41px;
+    }
+
+    @@media (max-width: 2048px) {
+        .div-12 {
+            padding: 0 20px;
+        }
+    }
+
+    .div-13 {
+        border-radius: 8px;
+        background-color: #00255b;
+        display: flex;
+        flex-direction: column;
+        color: var(--Primary-1-50, #fff3e5);
+        justify-content: center;
+    }
+
+    .div-14 {
+        font-family: Urbanist, sans-serif;
+        border-radius: 5px;
+        background-color: rgba(255, 255, 255, 0);
+        border-color: rgba(0, 37, 91, 1);
+        border-style: solid;
+        border-width: 1px;
+        justify-content: center;
+        padding: 17px 37px;
+    }
+
+    @@media (max-width: 2048px) {
+        .div-14 {
+            padding: 0 20px;
+        }
+    }
+
+    .div-15 {
+        background-color: #e5f1ff;
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        justify-content: center;
+        padding: 80px 0;
+    }
+
+    @@media (max-width: 2048px) {
+        .div-15 {
+            max-width: 100%;
+        }
+    }
+
+    .div-16 {
+        display: flex;
+        width: 100%;
+        gap: 20px;
+        margin: 40px 0 27px;
+        padding: 0 20px;
+    }
+
+    @@media (max-width: 2048px) {
+        .div-16 {
+            max-width: 100%;
+            flex-wrap: wrap;
+        }
+    }
+
+    .img {
+        aspect-ratio: 0.57;
+        object-fit: auto;
+        object-position: center;
+        width: 51px;
+        align-self: end;
+        margin-top: 362px;
+    }
+
+    @@media (max-width: 2048px) {
+        .img {
+            margin-top: 40px;
+        }
+    }
+
+    .div-17 {
+        justify-content: space-between;
+        flex-grow: 1;
+        flex-basis: auto;
+    }
+
+    @@media (max-width: 2048px) {
+        .div-17 {
+            max-width: 100%;
+        }
+    }
+
+    .div-18 {
+        gap: 20px;
+        display: flex;
+    }
+
+    @@media (max-width: 2048px) {
+        .div-18 {
+            flex-direction: column;
+            align-items: stretch;
+            gap: 0px;
+        }
+    }
+
+    .column {
+        display: flex;
+        flex-direction: column;
+        line-height: normal;
+        width: 50%;
+        margin-left: 0px;
+    }
+
+    @@media (max-width: 2048px) {
+        .column {
+            width: 100%;
+        }
+    }
+
+    .img-2 {
+        aspect-ratio: 1.19;
+        object-fit: auto;
+        object-position: center;
+        width: 100%;
+        flex-grow: 1;
+    }
+
+    @@media (max-width: 2048px) {
+        .img-2 {
+            max-width: 100%;
+            margin-top: 40px;
+        }
+    }
+
+    .column-2 {
+        display: flex;
+        flex-direction: column;
+        line-height: normal;
+        width: 50%;
+        margin-left: 20px;
+    }
+
+    @@media (max-width: 2048px) {
+        .column-2 {
+            width: 100%;
+        }
+    }
+
+    .div-19 {
+        display: flex;
+        flex-direction: column;
+        font-weight: 700;
+    }
+
+    @@media (max-width: 2048px) {
+        .div-19 {
+            max-width: 100%;
+            margin-top: 40px;
+        }
+    }
+
+    .div-20 {
+        color: var(--Neutral-900, #1a1a1a);
+        letter-spacing: -1.92px;
+        font: 64px Urbanist, sans-serif;
+    }
+
+    @@media (max-width: 2048px) {
+        .div-20 {
+            max-width: 100%;
+            font-size: 40px;
+        }
+    }
+
+    .div-21 {
+        color: var(--Neutral-500, #808080);
+        letter-spacing: -0.32px;
+        margin-top: 24px;
+        font: 300 16px/28px Lexend Deca, -apple-system, Roboto, Helvetica, sans-serif;
+    }
+
+    @@media (max-width: 2048px) {
+        .div-21 {
+            max-width: 100%;
+        }
+    }
+
+    .div-22 {
+        border-radius: 8px;
+        background-color: #00255b;
+        display: flex;
+        margin-top: 40px;
+        width: 240px;
+        max-width: 100%;
+        flex-direction: column;
+        font-size: 20px;
+        color: var(--Neutral-50, #f2f2f2);
+        text-align: center;
+        line-height: 110%;
+        justify-content: center;
+    }
+
+    .div-23 {
+        font-family: Urbanist, sans-serif;
+        border-radius: 5px;
+        background-color: rgba(255, 255, 255, 0);
+        border-color: rgba(0, 37, 91, 1);
+        border-style: solid;
+        border-width: 1px;
+        justify-content: center;
+        padding: 23px 45px;
+    }
+
+    @@media (max-width: 2048px) {
+        .div-23 {
+            padding: 0 20px;
+        }
+    }
+
+    .img-3 {
+        aspect-ratio: 0.64;
+        object-fit: auto;
+        object-position: center;
+        width: 52px;
+        margin: auto 0;
+    }
+
+    .div-24 {
+        justify-content: center;
+        align-items: center;
+        background-color: #fafafa;
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        padding: 80px;
+    }
+
+    @@media (max-width: 2048px) {
+        .div-24 {
+            max-width: 100%;
+            padding: 0 20px;
+        }
+    }
+
+    .div-25 {
+        justify-content: space-between;
+        margin-top: 10px;
+        width: 100%;
+        max-width: 1143px;
+    }
+
+    @@media (max-width: 2048px) {
+        .div-25 {
+            max-width: 100%;
+        }
+    }
+
+    .div-26 {
+        gap: 20px;
+        display: flex;
+    }
+
+    @@media (max-width: 2048px) {
+        .div-26 {
+            flex-direction: column;
+            align-items: stretch;
+            gap: 0px;
+        }
+    }
+
+    .column-3 {
+        display: flex;
+        flex-direction: column;
+        line-height: normal;
+        width: 45%;
+        margin-left: 0px;
+    }
+
+    @@media (max-width: 2048px) {
+        .column-3 {
+            width: 100%;
+        }
+    }
+
+    .div-27 {
+        justify-content: center;
+        display: flex;
+        flex-grow: 1;
+        flex-direction: column;
+        font-weight: 700;
+    }
+
+    @@media (max-width: 2048px) {
+        .div-27 {
+            max-width: 100%;
+            margin-top: 40px;
+        }
+    }
+
+    .div-28 {
+        color: #00255b;
+        letter-spacing: -0.72px;
+        font: 24px/60px Urbanist, sans-serif;
+    }
+
+    @@media (max-width: 2048px) {
+        .div-28 {
+            max-width: 100%;
+        }
+    }
+
+    .div-29 {
+        color: #000;
+        letter-spacing: -1.92px;
+        font: 64px Urbanist, sans-serif;
+    }
+
+    @@media (max-width: 2048px) {
+        .div-29 {
+            max-width: 100%;
+            font-size: 40px;
+        }
+    }
+
+    .column-4 {
+        display: flex;
+        flex-direction: column;
+        line-height: normal;
+        width: 55%;
+        margin-left: 20px;
+    }
+
+    @@media (max-width: 2048px) {
+        .column-4 {
+            width: 100%;
+        }
+    }
+
+    .div-30 {
+        display: flex;
+        flex-grow: 1;
+        flex-direction: column;
+    }
+
+    @@media (max-width: 2048px) {
+        .div-30 {
+            max-width: 100%;
+            margin-top: 40px;
+        }
+    }
+
+    .div-31 {
+        color: var(--Neutral-500, #808080);
+        font: 300 16px/28px Lexend Deca, -apple-system, Roboto, Helvetica, sans-serif;
+    }
+
+    @@media (max-width: 2048px) {
+        .div-31 {
+            max-width: 100%;
+        }
+    }
+
+    .div-32 {
+        border-radius: 8px;
+        background-color: #00255b;
+        align-self: start;
+        display: flex;
+        margin-top: 32px;
+        gap: 8px;
+        font-size: 20px;
+        color: #fff;
+        font-weight: 700;
+        white-space: nowrap;
+        text-align: center;
+        line-height: 110%;
+        padding: 20px 32px;
+    }
+
+    @@media (max-width: 2048px) {
+        .div-32 {
+            white-space: initial;
+            padding: 0 20px;
+        }
+    }
+
+    .div-33 {
+        font-family: Urbanist, sans-serif;
+    }
+
+    .img-4 {
+        aspect-ratio: 1;
+        object-fit: auto;
+        object-position: center;
+        width: 24px;
+    }
+
+    .div-34 {
+        justify-content: space-between;
+        margin-top: 64px;
+        width: 100%;
+        max-width: 1143px;
+        padding: 0 2px;
+    }
+
+    @@media (max-width: 2048px) {
+        .div-34 {
+            max-width: 100%;
+            margin-top: 40px;
+        }
+    }
+
+    .div-35 {
+        gap: 20px;
+        display: flex;
+    }
+
+    @@media (max-width: 2048px) {
+        .div-35 {
+            flex-direction: column;
+            align-items: stretch;
+            gap: 0px;
+        }
+    }
+
+    .column-5 {
+        display: flex;
+        flex-direction: column;
+        line-height: normal;
+        width: 33%;
+        margin-left: 0px;
+    }
+
+    @@media (max-width: 2048px) {
+        .column-5 {
+            width: 100%;
+        }
+    }
+
+    .div-36 {
+        border-color: rgba(0, 122, 255, 1);
+        border-style: solid;
+        border-bottom-width: 6px;
+        background-color: #fff;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding: 28px 16px 24px;
+    }
+
+    @@media (max-width: 2048px) {
+        .div-36 {
+            margin-top: 40px;
+        }
+    }
+
+    .img-5 {
+        aspect-ratio: 1;
+        object-fit: auto;
+        object-position: center;
+        width: 130px;
+        align-self: center;
+        max-width: 100%;
+    }
+
+    .div-37 {
+        color: #000;
+        letter-spacing: -0.48px;
+        margin-top: 32px;
+        font: 600 24px Urbanist, sans-serif;
+    }
+
+    .div-38 {
+        color: var(--Neutral-500, #808080);
+        letter-spacing: -0.32px;
+        margin-top: 12px;
+        font: 300 16px Lexend Deca, sans-serif;
+    }
+
+    .column-6 {
+        display: flex;
+        flex-direction: column;
+        line-height: normal;
+        width: 33%;
+        margin-left: 20px;
+    }
+
+    @@media (max-width: 2048px) {
+        .column-6 {
+            width: 100%;
+        }
+    }
+
+    .div-39 {
+        justify-content: center;
+        border-color: rgba(0, 122, 255, 1);
+        border-style: solid;
+        border-bottom-width: 6px;
+        background-color: #fff;
+        display: flex;
+        flex-grow: 1;
+        flex-direction: column;
+        width: 100%;
+        padding: 28px 16px 24px;
+    }
+
+    @@media (max-width: 2048px) {
+        .div-39 {
+            margin-top: 40px;
+        }
+    }
+
+    .img-6 {
+        aspect-ratio: 0.98;
+        object-fit: auto;
+        object-position: center;
+        width: 127px;
+        align-self: center;
+        max-width: 100%;
+    }
+
+    .div-40 {
+        color: #000;
+        letter-spacing: -0.48px;
+        margin-top: 32px;
+        font: 600 24px Urbanist, sans-serif;
+    }
+
+    .div-41 {
+        color: var(--Neutral-500, #808080);
+        letter-spacing: -0.32px;
+        margin-top: 12px;
+        font: 300 16px Lexend Deca, sans-serif;
+    }
+
+    .column-7 {
+        display: flex;
+        flex-direction: column;
+        line-height: normal;
+        width: 33%;
+        margin-left: 20px;
+    }
+
+    @@media (max-width: 2048px) {
+        .column-7 {
+            width: 100%;
+        }
+    }
+
+    .div-42 {
+        justify-content: center;
+        border-color: rgba(0, 122, 255, 1);
+        border-style: solid;
+        border-bottom-width: 6px;
+        background-color: #fff;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding: 28px 16px 24px;
+    }
+
+    @@media (max-width: 2048px) {
+        .div-42 {
+            margin-top: 40px;
+        }
+    }
+
+    .img-7 {
+        aspect-ratio: 1.12;
+        object-fit: auto;
+        object-position: center;
+        width: 146px;
+        align-self: center;
+        max-width: 100%;
+    }
+
+    .div-43 {
+        color: #000;
+        letter-spacing: -0.48px;
+        margin-top: 32px;
+        font: 600 24px Urbanist, sans-serif;
+    }
+
+    .div-44 {
+        color: var(--Neutral-500, #808080);
+        letter-spacing: -0.32px;
+        margin-top: 12px;
+        font: 300 16px Lexend Deca, sans-serif;
+    }
+
+    .div-45 {
+        align-self: center;
+        display: flex;
+        margin-top: 187px;
+        width: 100%;
+        max-width: 1228px;
+        flex-direction: column;
+        align-items: start;
+        padding: 0 20px;
+    }
+
+    @@media (max-width: 2048px) {
+        .div-45 {
+            max-width: 100%;
+            margin-top: 40px;
+        }
+    }
+
+    .div-46 {
+        color: #00255b;
+        letter-spacing: -0.72px;
+        font: 700 24px/60px Urbanist, sans-serif;
+    }
+
+    @@media (max-width: 2048px) {
+        .div-46 {
+            max-width: 100%;
+        }
+    }
+
+    .div-47 {
+        color: #000;
+        letter-spacing: -1.92px;
+        width: 652px;
+        font: 700 64px Urbanist, sans-serif;
+    }
+
+    @@media (max-width: 2048px) {
+        .div-47 {
+            max-width: 100%;
+            font-size: 40px;
+        }
+    }
+
+    .div-48 {
+        color: var(--Neutral-500, #808080);
+        margin-top: 24px;
+        width: 609px;
+        font: 300 16px/28px Lexend Deca, -apple-system, Roboto, Helvetica, sans-serif;
+    }
+
+    @@media (max-width: 2048px) {
+        .div-48 {
+            max-width: 100%;
+        }
+    }
+
+    .div-49 {
+        justify-content: space-between;
+        align-self: stretch;
+    }
+
+    @@media (max-width: 2048px) {
+        .div-49 {
+            max-width: 100%;
+        }
+    }
+
+    .div-50 {
+        gap: 20px;
+        display: flex;
+    }
+
+    @@media (max-width: 2048px) {
+        .div-50 {
+            flex-direction: column;
+            align-items: stretch;
+            gap: 0px;
+        }
+    }
+
+    .column-8 {
+        display: flex;
+        flex-direction: column;
+        line-height: normal;
+        width: 32%;
+        margin-left: 0px;
+    }
+
+    @@media (max-width: 2048px) {
+        .column-8 {
+            width: 100%;
+        }
+    }
+
+    .div-51 {
+        display: flex;
+        margin-top: 31px;
+        flex-grow: 1;
+        flex-direction: column;
+    }
+
+    @@media (max-width: 2048px) {
+        .div-51 {
+            margin-top: 40px;
+        }
+    }
+
+    .div-52 {
+        justify-content: center;
+        border-radius: 8px;
+        display: flex;
+        flex-direction: column;
+        padding: 12px 5px 12px 12px;
+    }
+
+    .div-53 {
+        color: #000;
+        text-align: right;
+        letter-spacing: -1.28px;
+        font: 800 64px/112.5% Manrope, sans-serif;
+    }
+
+    @@media (max-width: 2048px) {
+        .div-53 {
+            font-size: 40px;
+        }
+    }
+
+    .div-54 {
+        color: #007aff;
+        letter-spacing: -0.48px;
+        margin-top: 12px;
+        font: 400 24px/129% Lexend Deca, -apple-system, Roboto, Helvetica, sans-serif;
+    }
+
+    .div-55 {
+        justify-content: center;
+        border-radius: 8px;
+        display: flex;
+        margin-top: 24px;
+        flex-direction: column;
+        padding: 12px;
+    }
+
+    .div-56 {
+        color: #000;
+        text-align: right;
+        letter-spacing: -1.28px;
+        font: 800 64px/112.5% Manrope, sans-serif;
+    }
+
+    @@media (max-width: 2048px) {
+        .div-56 {
+            font-size: 40px;
+        }
+    }
+
+    .div-57 {
+        color: #007aff;
+        letter-spacing: -0.48px;
+        margin-top: 12px;
+        font: 400 24px/129% Lexend Deca, -apple-system, Roboto, Helvetica, sans-serif;
+    }
+
+    .div-58 {
+        justify-content: center;
+        border-radius: 8px;
+        display: flex;
+        margin-top: 24px;
+        flex-direction: column;
+        padding: 12px;
+    }
+
+    .div-59 {
+        color: #000;
+        text-align: right;
+        letter-spacing: -1.28px;
+        font: 800 64px/112.5% Manrope, sans-serif;
+    }
+
+    @@media (max-width: 2048px) {
+        .div-59 {
+            font-size: 40px;
+        }
+    }
+
+    .div-60 {
+        color: #007aff;
+        letter-spacing: -0.48px;
+        margin-top: 12px;
+        font: 400 24px/129% Lexend Deca, -apple-system, Roboto, Helvetica, sans-serif;
+    }
+
+    .column-9 {
+        display: flex;
+        flex-direction: column;
+        line-height: normal;
+        width: 68%;
+        margin-left: 20px;
+    }
+
+    @@media (max-width: 2048px) {
+        .column-9 {
+            width: 100%;
+        }
+    }
+
+    .img-8 {
+        aspect-ratio: 1.56;
+        object-fit: auto;
+        object-position: center;
+        width: 100%;
+        flex-grow: 1;
+    }
+
+    @@media (max-width: 2048px) {
+        .img-8 {
+            max-width: 100%;
+            margin-top: 40px;
+        }
+    }
+
+    .div-61 {
+        background-color: #fafafa;
+        display: flex;
+        margin-top: 138px;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        padding: 80px;
+    }
+
+    @@media (max-width: 2048px) {
+        .div-61 {
+            max-width: 100%;
+            margin-top: 40px;
+            padding: 0 20px;
+        }
+    }
+
+    .div-62 {
+        justify-content: center;
+        align-self: stretch;
+    }
+
+    @@media (max-width: 2048px) {
+        .div-62 {
+            max-width: 100%;
+        }
+    }
+
+    .div-63 {
+        gap: 20px;
+        display: flex;
+    }
+
+    @@media (max-width: 2048px) {
+        .div-63 {
+            flex-direction: column;
+            align-items: stretch;
+            gap: 0px;
+        }
+    }
+
+    .div-64 {
+        display: flex;
+        flex-grow: 1;
+        flex-direction: column;
+        font-weight: 700;
+        line-height: 60px;
+    }
+
+    @@media (max-width: 2048px) {
+        .div-64 {
+            max-width: 100%;
+            margin-top: 40px;
+        }
+    }
+
+    .div-65 {
+        color: #00255b;
+        letter-spacing: -0.72px;
+        font: 24px Urbanist, sans-serif;
+    }
+
+    @@media (max-width: 2048px) {
+        .div-65 {
+            max-width: 100%;
+        }
+    }
+
+    .div-66 {
+        color: var(--Neutral-950, #0d0d0d);
+        letter-spacing: -1.92px;
+        font: 64px Urbanist, sans-serif;
+    }
+
+    @@media (max-width: 2048px) {
+        .div-66 {
+            max-width: 100%;
+            font-size: 40px;
+            line-height: 41px;
+        }
+    }
+
+    .column-10 {
+        display: flex;
+        flex-direction: column;
+        line-height: normal;
+        width: 50%;
+        margin-left: 20px;
+    }
+
+    @@media (max-width: 2048px) {
+        .column-10 {
+            width: 100%;
+        }
+    }
+
+    .div-67 {
+        color: var(--Neutral-500, #808080);
+        align-self: stretch;
+        margin: auto 0;
+        font: 300 16px/28px Lexend Deca, -apple-system, Roboto, Helvetica, sans-serif;
+    }
+
+    @@media (max-width: 2048px) {
+        .div-67 {
+            max-width: 100%;
+            margin-top: 40px;
+        }
+    }
+
+    .div-68 {
+        margin-top: 80px;
+        width: 100%;
+        max-width: 1134px;
+    }
+
+    @@media (max-width: 2048px) {
+        .div-68 {
+            max-width: 100%;
+            margin-top: 40px;
+        }
+    }
+
+    .div-69 {
+        gap: 20px;
+        display: flex;
+    }
+
+    @@media (max-width: 2048px) {
+        .div-69 {
+            flex-direction: column;
+            align-items: stretch;
+            gap: 0px;
+        }
+    }
+
+    .div-70 {
+        display: flex;
+        flex-grow: 1;
+        flex-direction: column;
+        font-weight: 700;
+    }
+
+    @@media (max-width: 2048px) {
+        .div-70 {
+            max-width: 100%;
+            margin-top: 40px;
+        }
+    }
+
+    .img-9 {
+        aspect-ratio: 1.79;
+        object-fit: auto;
+        object-position: center;
+        width: 410px;
+        max-width: 100%;
+    }
+
+    .div-71 {
+        color: var(--Neutral-950, #0d0d0d);
+        margin-top: 54px;
+        font: 32px/120% Urbanist, sans-serif;
+    }
+
+    @@media (max-width: 2048px) {
+        .div-71 {
+            max-width: 100%;
+            margin-top: 40px;
+        }
+    }
+
+    .div-72 {
+        color: var(--Neutral-500, #808080);
+        margin-top: 8px;
+        font: 300 16px/19px Lexend Deca, -apple-system, Roboto, Helvetica, sans-serif;
+    }
+
+    @@media (max-width: 2048px) {
+        .div-72 {
+            max-width: 100%;
+        }
+    }
+
+    .div-73 {
+        align-self: start;
+        display: flex;
+        margin-top: 24px;
+        gap: 20px;
+        font-size: 24px;
+        color: #00255b;
+        justify-content: space-between;
+    }
+
+    .div-74 {
+        font-family: Urbanist, sans-serif;
+    }
+
+    .img-10 {
+        aspect-ratio: 1.04;
+        object-fit: auto;
+        object-position: center;
+        width: 24px;
+        align-self: start;
+    }
+
+    .column-11 {
+        display: flex;
+        flex-direction: column;
+        line-height: normal;
+        width: 50%;
+        margin-left: 20px;
+    }
+
+    @@media (max-width: 2048px) {
+        .column-11 {
+            width: 100%;
+        }
+    }
+
+    .div-75 {
+        display: flex;
+        flex-grow: 1;
+        flex-direction: column;
+        font-weight: 700;
+    }
+
+    @@media (max-width: 2048px) {
+        .div-75 {
+            max-width: 100%;
+            margin-top: 40px;
+        }
+    }
+
+    .img-11 {
+        aspect-ratio: 1.79;
+        object-fit: auto;
+        object-position: center;
+        width: 410px;
+        max-width: 100%;
+    }
+
+    .div-76 {
+        color: var(--Neutral-950, #0d0d0d);
+        margin-top: 54px;
+        font: 32px/120% Urbanist, sans-serif;
+    }
+
+    @@media (max-width: 2048px) {
+        .div-76 {
+            max-width: 100%;
+            margin-top: 40px;
+        }
+    }
+
+    .div-77 {
+        color: var(--Neutral-500, #808080);
+        margin-top: 8px;
+        font: 300 16px/19px Lexend Deca, -apple-system, Roboto, Helvetica, sans-serif;
+    }
+
+    @@media (max-width: 2048px) {
+        .div-77 {
+            max-width: 100%;
+        }
+    }
+
+    .div-78 {
+        align-self: start;
+        display: flex;
+        margin-top: 24px;
+        gap: 20px;
+        font-size: 24px;
+        color: #00255b;
+        justify-content: space-between;
+    }
+
+    .div-79 {
+        font-family: Urbanist, sans-serif;
+    }
+
+    .img-12 {
+        aspect-ratio: 1.04;
+        object-fit: auto;
+        object-position: center;
+        width: 24px;
+        align-self: start;
+    }
+
+    .div-80 {
+        margin-top: 120px;
+        width: 100%;
+        max-width: 1134px;
+    }
+
+    @@media (max-width: 2048px) {
+        .div-80 {
+            max-width: 100%;
+            margin-top: 40px;
+        }
+    }
+
+    .div-81 {
+        gap: 20px;
+        display: flex;
+    }
+
+    @@media (max-width: 2048px) {
+        .div-81 {
+            flex-direction: column;
+            align-items: stretch;
+            gap: 0px;
+        }
+    }
+
+    .div-82 {
+        display: flex;
+        margin-top: 33px;
+        flex-grow: 1;
+        flex-direction: column;
+        font-weight: 700;
+    }
+
+    @@media (max-width: 2048px) {
+        .div-82 {
+            max-width: 100%;
+            margin-top: 40px;
+        }
+    }
+
+    .img-13 {
+        aspect-ratio: 1.72;
+        object-fit: auto;
+        object-position: center;
+        width: 410px;
+        max-width: 100%;
+    }
+
+    .div-83 {
+        color: var(--Neutral-950, #0d0d0d);
+        margin-top: 54px;
+        font: 32px/120% Urbanist, sans-serif;
+    }
+
+    @@media (max-width: 2048px) {
+        .div-83 {
+            max-width: 100%;
+            margin-top: 40px;
+        }
+    }
+
+    .div-84 {
+        color: var(--Neutral-500, #808080);
+        margin-top: 8px;
+        font: 300 16px/19px Lexend Deca, -apple-system, Roboto, Helvetica, sans-serif;
+    }
+
+    @@media (max-width: 2048px) {
+        .div-84 {
+            max-width: 100%;
+        }
+    }
+
+    .div-85 {
+        align-self: start;
+        display: flex;
+        margin-top: 24px;
+        gap: 20px;
+        font-size: 24px;
+        color: #00255b;
+        justify-content: space-between;
+    }
+
+    .div-86 {
+        font-family: Urbanist, sans-serif;
+    }
+
+    .img-14 {
+        aspect-ratio: 1.04;
+        object-fit: auto;
+        object-position: center;
+        width: 24px;
+        align-self: start;
+    }
+
+    .column-12 {
+        display: flex;
+        flex-direction: column;
+        line-height: normal;
+        width: 50%;
+        margin-left: 20px;
+    }
+
+    @@media (max-width: 2048px) {
+        .column-12 {
+            width: 100%;
+        }
+    }
+
+    .div-87 {
+        display: flex;
+        flex-grow: 1;
+        flex-direction: column;
+        font-weight: 700;
+    }
+
+    @@media (max-width: 2048px) {
+        .div-87 {
+            max-width: 100%;
+            margin-top: 40px;
+        }
+    }
+
+    .img-15 {
+        aspect-ratio: 1.52;
+        object-fit: auto;
+        object-position: center;
+        width: 410px;
+        max-width: 100%;
+    }
+
+    .div-88 {
+        color: var(--Neutral-950, #0d0d0d);
+        margin-top: 54px;
+        font: 32px/120% Urbanist, sans-serif;
+    }
+
+    @@media (max-width: 2048px) {
+        .div-88 {
+            max-width: 100%;
+            margin-top: 40px;
+        }
+    }
+
+    .div-89 {
+        color: var(--Neutral-500, #808080);
+        margin-top: 8px;
+        font: 300 16px/19px Lexend Deca, -apple-system, Roboto, Helvetica, sans-serif;
+    }
+
+    @@media (max-width: 2048px) {
+        .div-89 {
+            max-width: 100%;
+        }
+    }
+
+    .div-90 {
+        align-self: start;
+        display: flex;
+        margin-top: 24px;
+        gap: 20px;
+        font-size: 24px;
+        color: #00255b;
+        justify-content: space-between;
+    }
+
+    .div-91 {
+        font-family: Urbanist, sans-serif;
+    }
+
+    .img-16 {
+        aspect-ratio: 1.04;
+        object-fit: auto;
+        object-position: center;
+        width: 24px;
+        align-self: start;
+    }
+
+    .div-92 {
+        background-color: #fafafa;
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        padding: 80px;
+    }
+
+    @@media (max-width: 2048px) {
+        .div-92 {
+            max-width: 100%;
+            padding: 0 20px;
+        }
+    }
+
+    .div-93 {
+        color: #00255b;
+        text-align: center;
+        letter-spacing: -0.72px;
+        align-self: center;
+        font: 700 24px/60px Urbanist, sans-serif;
+    }
+
+    .div-94 {
+        color: var(--Neutral-950, #0d0d0d);
+        text-align: center;
+        letter-spacing: -1.92px;
+        align-self: center;
+        width: 961px;
+        font: 700 64px Urbanist, sans-serif;
+    }
+
+    @@media (max-width: 2048px) {
+        .div-94 {
+            max-width: 100%;
+            font-size: 40px;
+        }
+    }
+
+    .div-95 {
+        background-color: #e5f1ff;
+        margin-top: 60px;
+        padding: 0 2px 0 30px;
+    }
+
+    @@media (max-width: 2048px) {
+        .div-95 {
+            max-width: 100%;
+            padding-left: 20px;
+            margin-top: 40px;
+        }
+    }
+
+    .div-96 {
+        gap: 20px;
+        display: flex;
+    }
+
+    @@media (max-width: 2048px) {
+        .div-96 {
+            flex-direction: column;
+            align-items: stretch;
+            gap: 0px;
+        }
+    }
+
+    .div-97 {
+        display: flex;
+        flex-direction: column;
+        align-self: stretch;
+        font-size: 16px;
+        color: #00255b;
+        font-weight: 700;
+        line-height: 36px;
+        margin: auto 0;
+    }
+
+    @@media (max-width: 2048px) {
+        .div-97 {
+            max-width: 100%;
+            margin-top: 40px;
+        }
+    }
+
+    .div-98 {
+        font-family: Urbanist, sans-serif;
+        letter-spacing: 1.12px;
+        text-transform: uppercase;
+    }
+
+    @@media (max-width: 2048px) {
+        .div-98 {
+            max-width: 100%;
+        }
+    }
+
+    .div-99 {
+        color: #000;
+        letter-spacing: -0.58px;
+        margin-top: 6px;
+        font: 29px Urbanist, sans-serif;
+    }
+
+    @@media (max-width: 2048px) {
+        .div-99 {
+            max-width: 100%;
+        }
+    }
+
+    .div-100 {
+        color: var(--Neutral-500, #808080);
+        font-family: Lexend Deca, sans-serif;
+        font-weight: 300;
+        line-height: 28px;
+        margin-top: 6px;
+    }
+
+    @@media (max-width: 2048px) {
+        .div-100 {
+            max-width: 100%;
+        }
+    }
+
+    .div-101 {
+        justify-content: center;
+        align-self: start;
+        display: flex;
+        margin-top: 30px;
+        gap: 20px;
+        font-weight: 600;
+        line-height: 100%;
+        padding: 2px 0;
+    }
+
+    .div-102 {
+        font-family: Urbanist, sans-serif;
+    }
+
+    .img-17 {
+        aspect-ratio: 1.1;
+        object-fit: auto;
+        object-position: center;
+        width: 11px;
+        fill: #00255b;
+        stroke-width: 2px;
+        stroke: #00255b;
+        border-color: rgba(0, 37, 91, 1);
+        border-style: solid;
+        border-width: 2px;
+        align-self: start;
+    }
+
+    .column-13 {
+        display: flex;
+        flex-direction: column;
+        line-height: normal;
+        width: 50%;
+        margin-left: 20px;
+    }
+
+    @@media (max-width: 2048px) {
+        .column-13 {
+            width: 100%;
+        }
+    }
+
+    .img-18 {
+        aspect-ratio: 1.85;
+        object-fit: auto;
+        object-position: center;
+        width: 100%;
+        flex-grow: 1;
+    }
+
+    @@media (max-width: 2048px) {
+        .img-18 {
+            max-width: 100%;
+            margin-top: 40px;
+        }
+    }
+
+    .div-103 {
+        margin: 31px 0 39px;
+    }
+
+    @@media (max-width: 2048px) {
+        .div-103 {
+            max-width: 100%;
+        }
+    }
+
+    .div-104 {
+        gap: 20px;
+        display: flex;
+    }
+
+    @@media (max-width: 2048px) {
+        .div-104 {
+            flex-direction: column;
+            align-items: stretch;
+            gap: 0px;
+        }
+    }
+
+    .column-14 {
+        display: flex;
+        flex-direction: column;
+        line-height: normal;
+        width: 33%;
+        margin-left: 0px;
+    }
+
+    @@media (max-width: 2048px) {
+        .column-14 {
+            width: 100%;
+        }
+    }
+
+    .div-105 {
+        display: flex;
+        flex-grow: 1;
+        flex-direction: column;
+        font-weight: 700;
+        line-height: 36px;
+    }
+
+    @@media (max-width: 2048px) {
+        .div-105 {
+            margin-top: 30px;
+        }
+    }
+
+    .div-106 {
+        background-color: #e5f1ff;
+        display: flex;
+        flex-direction: column;
+        padding: 25px 34px 80px;
+    }
+
+    @@media (max-width: 2048px) {
+        .div-106 {
+            padding: 0 20px;
+        }
+    }
+
+    .div-107 {
+        color: #00255b;
+        text-transform: uppercase;
+        font: 16px Urbanist, sans-serif;
+    }
+
+    .div-108 {
+        color: #000;
+        letter-spacing: -0.58px;
+        margin: 7px 0 14px;
+        font: 29px Urbanist, sans-serif;
+    }
+
+    .img-19 {
+        aspect-ratio: 2;
+        object-fit: auto;
+        object-position: center;
+        width: 100%;
+    }
+
+    .column-15 {
+        display: flex;
+        flex-direction: column;
+        line-height: normal;
+        width: 33%;
+        margin-left: 20px;
+    }
+
+    @@media (max-width: 2048px) {
+        .column-15 {
+            width: 100%;
+        }
+    }
+
+    .div-109 {
+        display: flex;
+        flex-grow: 1;
+        flex-direction: column;
+        font-weight: 700;
+        line-height: 36px;
+    }
+
+    @@media (max-width: 2048px) {
+        .div-109 {
+            margin-top: 30px;
+        }
+    }
+
+    .div-110 {
+        background-color: #e5f1ff;
+        display: flex;
+        flex-direction: column;
+        padding: 24px 34px;
+    }
+
+    @@media (max-width: 2048px) {
+        .div-110 {
+            padding: 0 20px;
+        }
+    }
+
+    .div-111 {
+        color: #00255b;
+        letter-spacing: 1.12px;
+        text-transform: uppercase;
+        font: 16px Urbanist, sans-serif;
+    }
+
+    .div-112 {
+        color: #000;
+        letter-spacing: -0.58px;
+        margin-top: 7px;
+        font: 29px Urbanist, sans-serif;
+    }
+
+    .img-20 {
+        aspect-ratio: 2;
+        object-fit: auto;
+        object-position: center;
+        width: 100%;
+    }
+
+    .column-16 {
+        display: flex;
+        flex-direction: column;
+        line-height: normal;
+        width: 33%;
+        margin-left: 20px;
+    }
+
+    @@media (max-width: 2048px) {
+        .column-16 {
+            width: 100%;
+        }
+    }
+
+    .div-113 {
+        display: flex;
+        flex-grow: 1;
+        flex-direction: column;
+        font-weight: 700;
+        line-height: 36px;
+    }
+
+    @@media (max-width: 2048px) {
+        .div-113 {
+            margin-top: 30px;
+        }
+    }
+
+    .div-114 {
+        background-color: #e5f1ff;
+        display: flex;
+        flex-direction: column;
+        padding: 25px 34px 58px;
+    }
+
+    @@media (max-width: 2048px) {
+        .div-114 {
+            padding: 0 20px;
+        }
+    }
+
+    .div-115 {
+        color: #00255b;
+        letter-spacing: 1.12px;
+        text-transform: uppercase;
+        font: 16px Urbanist, sans-serif;
+    }
+
+    .div-116 {
+        color: #000;
+        letter-spacing: -0.58px;
+        margin-top: 7px;
+        font: 29px Urbanist, sans-serif;
+    }
+
+    .img-21 {
+        aspect-ratio: 2;
+        object-fit: auto;
+        object-position: center;
+        width: 100%;
+    }
+
+    .div-117 {
+        background-color: rgba(193, 193, 193, 1);
+        width: 100%;
+        padding: 38px 72px;
+    }
+
+    @@media (max-width: 2048px) {
+        .div-117 {
+            max-width: 100%;
+            padding: 0 20px;
+        }
+    }
+
+    .div-118 {
+        gap: 20px;
+        display: flex;
+    }
+
+    @@media (max-width: 2048px) {
+        .div-118 {
+            flex-direction: column;
+            align-items: stretch;
+            gap: 0px;
+        }
+    }
+
+    .div-119 {
+        display: flex;
+        flex-grow: 1;
+        flex-direction: column;
+        color: #00255b;
+        font-weight: 700;
+    }
+
+    @@media (max-width: 2048px) {
+        .div-119 {
+            max-width: 100%;
+            margin-top: 40px;
+        }
+    }
+
+    .div-120 {
+        letter-spacing: -0.72px;
+        font: 24px/60px Urbanist, sans-serif;
+    }
+
+    @@media (max-width: 2048px) {
+        .div-120 {
+            max-width: 100%;
+        }
+    }
+
+    .div-121 {
+        letter-spacing: -1.92px;
+        font: 64px Urbanist, sans-serif;
+    }
+
+    @@media (max-width: 2048px) {
+        .div-121 {
+            max-width: 100%;
+            font-size: 40px;
+        }
+    }
+
+    .column-17 {
+        display: flex;
+        flex-direction: column;
+        line-height: normal;
+        width: 50%;
+        margin-left: 20px;
+    }
+
+    @@media (max-width: 2048px) {
+        .column-17 {
+            width: 100%;
+        }
+    }
+
+    .div-122 {
+        display: flex;
+        flex-direction: column;
+        align-self: stretch;
+        color: #fff;
+        margin: auto 0;
+    }
+
+    @@media (max-width: 2048px) {
+        .div-122 {
+            max-width: 100%;
+            margin-top: 40px;
+        }
+    }
+
+    .div-123 {
+        font: 300 16px/28px Lexend Deca, -apple-system, Roboto, Helvetica, sans-serif;
+    }
+
+    @@media (max-width: 2048px) {
+        .div-123 {
+            max-width: 100%;
+        }
+    }
+
+    .div-124 {
+        display: flex;
+        margin-top: 112px;
+        gap: 20px;
+    }
+
+    @@media (max-width: 2048px) {
+        .div-124 {
+            max-width: 100%;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+    }
+
+    .div-125 {
+        letter-spacing: -0.48px;
+        flex-grow: 1;
+        flex-basis: auto;
+        margin: auto 0;
+        font: 500 24px/108% Urbanist, sans-serif;
+    }
+
+    .div-126 {
+        border-radius: 8px;
+        background-color: #00255b;
+        white-space: nowrap;
+        justify-content: center;
+        padding: 15px 48px;
+        font: 700 20px/110% Urbanist, sans-serif;
+    }
+
+    @@media (max-width: 2048px) {
+        .div-126 {
+            white-space: initial;
+            padding: 0 20px;
+        }
+    }
+
+    .div-127 {
+        background-color: var(--Neutral-400, #999);
+        margin-top: 15px;
+        height: 2px;
+    }
+
+    @@media (max-width: 2048px) {
+        .div-127 {
+            max-width: 100%;
+        }
+    }
+
+</style>
+<html>
+<body>
+<div class="div">
+  
+  <div class="div-15">
+    <div class="div-16">
+      <img
+        loading="lazy"
+        src="https://cdn.builder.io/api/v1/image/assets/TEMP/a9c1a8c72329d2c5f075106e88fc6b1358ea02f8049e68c2260163f6508993ad?apiKey=122ca1b121464557885065d6851fe1a0&"
+        class="img"
+      />
+      <div class="div-17">
+        <div class="div-18">
+          <div class="column">
+            <img
+              loading="lazy"
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/859c0b2d23d4a047d76db659ca0b3142b31794cfc0e31f5bcac1bde32d7de1db?apiKey=122ca1b121464557885065d6851fe1a0&"
+              class="img-2"
+            />
+          </div>
+          <div class="column-2">
+            <div class="div-19">
+              <div class="div-20">
+                Gestionar la inversión nunca ha sido tan fácil
+              </div>
+              <div class="div-21">
+                La gestión de inversiones se refiere al manejo de activos
+                financieros y otras inversiones, no solo a su compra y venta.
+              </div>
+              <div class="div-22">
+                <div class="div-23">hagámonos ricos</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <img
+        loading="lazy"
+        src="https://cdn.builder.io/api/v1/image/assets/TEMP/d6051d56e0b19232e7a78971d85a03cc66bd621b33ba499243836a33c587557c?apiKey=122ca1b121464557885065d6851fe1a0&"
+        class="img-3"
+      />
+    </div>
+  </div>
+  <div class="div-24">
+    <div class="div-25">
+      <div class="div-26">
+        <div class="column-3">
+          <div class="div-27">
+            <div class="div-28">¿Por qué deberíamos hacerlo nosotros?</div>
+            <div class="div-29">Somos un equipo de entusiastas.</div>
+          </div>
+        </div>
+        <div class="column-4">
+          <div class="div-30">
+            <div class="div-31">
+              Nuestro paquete de tecnología está diseñado para respaldar
+              diversas necesidades comerciales bajo demanda. Nuestra cultura
+              comunitaria, excelencia en el rendimiento y tecnología de nube
+              privada allanan el camino para una atención al cliente sin
+              precedentes.
+            </div>
+            <div class="div-32">
+              <div class="div-33">Explorar</div>
+              <img
+                loading="lazy"
+                src="https://cdn.builder.io/api/v1/image/assets/TEMP/264b9e910a8bb733b3f78c9ed8851f4147cdd549e0fedb726d53506871d1a769?apiKey=122ca1b121464557885065d6851fe1a0&"
+                class="img-4"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="div-34">
+      <div class="div-35">
+        <div class="column-5">
+          <div class="div-36">
+            <img
+              loading="lazy"
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/482101a6e901c42ef0260426d3b19d79bb556edf03f6804cdd77ad640585060a?apiKey=122ca1b121464557885065d6851fe1a0&"
+              class="img-5"
+            />
+            <div class="div-37">Gestiona tus tarjetas</div>
+            <div class="div-38">
+              Podemos ayudarle a mejorar la gestión de tus finanzas y tarjetas.
+            </div>
+          </div>
+        </div>
+        <div class="column-6">
+          <div class="div-39">
+            <img
+              loading="lazy"
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/c8e7813852dcae495d1085149127e1a644791b77093ed7af37ea04eadcee43bd?apiKey=122ca1b121464557885065d6851fe1a0&"
+              class="img-6"
+            />
+            <div class="div-40">Consigue el objetivo de tus sueños</div>
+            <div class="div-41">
+              Podemos ayudarle a ahorrar más dinero y mantenerlo alerta. Al
+              invertir tus fondos, el dinero que tienes hoy puede ser más útil.
+            </div>
+          </div>
+        </div>
+        <div class="column-7">
+          <div class="div-42">
+            <img
+              loading="lazy"
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/545f41734ab04409f0683ccd9d94ea9a1c55aa6b4d5796add0f15d61c5e314b8?apiKey=122ca1b121464557885065d6851fe1a0&"
+              class="img-7"
+            />
+            <div class="div-43">Efectivo y eficiente</div>
+            <div class="div-44">
+              Podemos ayudarle a ahorrar más dinero y mantenerlo alerta. Al
+              invertir tus fondos, el dinero que tienes hoy puede ser más útil.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="div-45">
+    <div class="div-46">Somos globales</div>
+    <div class="div-47">Escale y adáptese a la velocidad de su negocio</div>
+    <div class="div-48">
+      El analfabetismo financiero provoca daños en las viviendas, abandono de la
+      universidad, dependencia de préstamos abusivos (préstamos de día de pago)
+      y beneficios gubernamentales, problemas de salud (estrés, depresión,
+      ansiedad), quiebras, ejecuciones hipotecarias, divorcios y falta de
+      vivienda.
+    </div>
+    <div class="div-49">
+      <div class="div-50">
+        <div class="column-8">
+          <div class="div-51">
+            <div class="div-52">
+              <div class="div-53">70.000 +</div>
+              <div class="div-54">Empleados</div>
+            </div>
+            <div class="div-55">
+              <div class="div-56">30 +</div>
+              <div class="div-57">Países</div>
+            </div>
+            <div class="div-58">
+              <div class="div-59">80 +</div>
+              <div class="div-60">Centros de contacto</div>
+            </div>
+          </div>
+        </div>
+        <div class="column-9">
+          <img
+            loading="lazy"
+            src="https://cdn.builder.io/api/v1/image/assets/TEMP/254de7fee5495a2843ecdaa70383dc9f6ab630718cd7c6f9e04dd7d37f2a8444?apiKey=122ca1b121464557885065d6851fe1a0&"
+            class="img-8"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="div-61">
+    <div class="div-62">
+      <div class="div-63">
+        <div class="column">
+          <div class="div-64">
+            <div class="div-65">Qué hacemos</div>
+            <div class="div-66">
+              La transformación de la experiencia del cliente comienza aquí
+            </div>
+          </div>
+        </div>
+        <div class="column-10">
+          <div class="div-67">
+            La alfabetización financiera a través del desarrollo del carácter
+            (ABC de la riqueza) es un enfoque innovador que proporciona un marco
+            para combinar el desarrollo del carácter con la educación
+            financiera, con el fin de criar una generación que reciba tutoría
+            para volverse financieramente estable e independiente, y utilizar
+            diversas formas de RIQUEZA, como como conocimiento.
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="div-68">
+      <div class="div-69">
+        <div class="column">
+          <div class="div-70">
+            <img
+              loading="lazy"
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/ad4bce6c359992c1c81b083a7b70e9e1f54d623391fd44725b873c356aaa1ae2?apiKey=122ca1b121464557885065d6851fe1a0&"
+              class="img-9"
+            />
+            <div class="div-71">Crecimiento de ingresos</div>
+            <div class="div-72">
+              Estrategias de crecimiento desde la adquisición hasta la
+              conversión
+            </div>
+            <div class="div-73">
+              <div class="div-74">Aprende más</div>
+              <img
+                loading="lazy"
+                src="https://cdn.builder.io/api/v1/image/assets/TEMP/ae550da6ccc432f82c1c4d1b7d5e506d51589758ee808977d065eaf52c349e54?apiKey=122ca1b121464557885065d6851fe1a0&"
+                class="img-10"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="column-11">
+          <div class="div-75">
+            <img
+              loading="lazy"
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/a2370cb48c82eb05f65a37dd783fcb33b7d57be0be6ebae25034d9701dd4086b?apiKey=122ca1b121464557885065d6851fe1a0&"
+              class="img-11"
+            />
+            <div class="div-76">Cuidado del cliente</div>
+            <div class="div-77">
+              Embajadores de marca que atienden a los clientes en todos los
+              canales
+            </div>
+            <div class="div-78">
+              <div class="div-79">Aprende más</div>
+              <img
+                loading="lazy"
+                src="https://cdn.builder.io/api/v1/image/assets/TEMP/ae550da6ccc432f82c1c4d1b7d5e506d51589758ee808977d065eaf52c349e54?apiKey=122ca1b121464557885065d6851fe1a0&"
+                class="img-12"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="div-80">
+      <div class="div-81">
+        <div class="column">
+          <div class="div-82">
+            <img
+              loading="lazy"
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/357018fab046ab73219539d01b34e08b1f2d0da0a4eab05941ada501f5fb7309?apiKey=122ca1b121464557885065d6851fe1a0&"
+              class="img-13"
+            />
+            <div class="div-83">Apoyo técnico</div>
+            <div class="div-84">
+              El soporte técnico experto maneja problemas cada vez más complejos
+            </div>
+            <div class="div-85">
+              <div class="div-86">Aprende más</div>
+              <img
+                loading="lazy"
+                src="https://cdn.builder.io/api/v1/image/assets/TEMP/ae550da6ccc432f82c1c4d1b7d5e506d51589758ee808977d065eaf52c349e54?apiKey=122ca1b121464557885065d6851fe1a0&"
+                class="img-14"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="column-12">
+          <div class="div-87">
+            <img
+              loading="lazy"
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/3abce15b5b1628353311fda49a3d5bda98f4865938b974641e348261a54f6f83?apiKey=122ca1b121464557885065d6851fe1a0&"
+              class="img-15"
+            />
+            <div class="div-88">Retención de Clientes</div>
+            <div class="div-89">
+              Compromiso basado en datos que genera lealtad y recupera ingresos
+            </div>
+            <div class="div-90">
+              <div class="div-91">Aprende más</div>
+              <img
+                loading="lazy"
+                src="https://cdn.builder.io/api/v1/image/assets/TEMP/ae550da6ccc432f82c1c4d1b7d5e506d51589758ee808977d065eaf52c349e54?apiKey=122ca1b121464557885065d6851fe1a0&"
+                class="img-16"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="div-92">
+    <div class="div-93">Blogs</div>
+    <div class="div-94">
+      Conceptos y temas importantes sobre finanzas y análisis financiero.
+    </div>
+    <div class="div-95">
+      <div class="div-96">
+        <div class="column">
+          <div class="div-97">
+            <div class="div-98">Inversión</div>
+            <div class="div-99">
+              Autoridad Reguladora de la Industria Financiera (FINRA)
+            </div>
+            <div class="div-100">
+              La Autoridad Reguladora de la Industria Financiera (o FINRA) es
+              una organización no gubernamental que...
+            </div>
+            <div class="div-101">
+              <div class="div-102">Leer más</div>
+              <img
+                loading="lazy"
+                src="https://cdn.builder.io/api/v1/image/assets/TEMP/54eb86f907fe5b1eb910c6c8bfb1f8d84793757ce108e3e07c10c80de24e60f2?apiKey=122ca1b121464557885065d6851fe1a0&"
+                class="img-17"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="column-13">
+          <img
+            loading="lazy"
+            srcset="https://cdn.builder.io/api/v1/image/assets/TEMP/854e7af289889439e384cf0b273ecc3f0114a4702c37472bb13b6d869673f9ba?apiKey=122ca1b121464557885065d6851fe1a0&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/854e7af289889439e384cf0b273ecc3f0114a4702c37472bb13b6d869673f9ba?apiKey=122ca1b121464557885065d6851fe1a0&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/854e7af289889439e384cf0b273ecc3f0114a4702c37472bb13b6d869673f9ba?apiKey=122ca1b121464557885065d6851fe1a0&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/854e7af289889439e384cf0b273ecc3f0114a4702c37472bb13b6d869673f9ba?apiKey=122ca1b121464557885065d6851fe1a0&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/854e7af289889439e384cf0b273ecc3f0114a4702c37472bb13b6d869673f9ba?apiKey=122ca1b121464557885065d6851fe1a0&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/854e7af289889439e384cf0b273ecc3f0114a4702c37472bb13b6d869673f9ba?apiKey=122ca1b121464557885065d6851fe1a0&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/854e7af289889439e384cf0b273ecc3f0114a4702c37472bb13b6d869673f9ba?apiKey=122ca1b121464557885065d6851fe1a0&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/854e7af289889439e384cf0b273ecc3f0114a4702c37472bb13b6d869673f9ba?apiKey=122ca1b121464557885065d6851fe1a0&"
+            class="img-18"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="div-103">
+      <div class="div-104">
+        <div class="column-14">
+          <div class="div-105">
+            <div class="div-106">
+              <div class="div-107">Mejores prácticas</div>
+              <div class="div-108">
+                Dividendo vs recompra/recompra de acciones
+              </div>
+            </div>
+            <img
+              loading="lazy"
+              srcset="https://cdn.builder.io/api/v1/image/assets/TEMP/43592984a67257d1538e9c540fae36f4705318ae0df7040f6f1dab7f05b36d90?apiKey=122ca1b121464557885065d6851fe1a0&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/43592984a67257d1538e9c540fae36f4705318ae0df7040f6f1dab7f05b36d90?apiKey=122ca1b121464557885065d6851fe1a0&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/43592984a67257d1538e9c540fae36f4705318ae0df7040f6f1dab7f05b36d90?apiKey=122ca1b121464557885065d6851fe1a0&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/43592984a67257d1538e9c540fae36f4705318ae0df7040f6f1dab7f05b36d90?apiKey=122ca1b121464557885065d6851fe1a0&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/43592984a67257d1538e9c540fae36f4705318ae0df7040f6f1dab7f05b36d90?apiKey=122ca1b121464557885065d6851fe1a0&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/43592984a67257d1538e9c540fae36f4705318ae0df7040f6f1dab7f05b36d90?apiKey=122ca1b121464557885065d6851fe1a0&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/43592984a67257d1538e9c540fae36f4705318ae0df7040f6f1dab7f05b36d90?apiKey=122ca1b121464557885065d6851fe1a0&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/43592984a67257d1538e9c540fae36f4705318ae0df7040f6f1dab7f05b36d90?apiKey=122ca1b121464557885065d6851fe1a0&"
+              class="img-19"
+            />
+          </div>
+        </div>
+        <div class="column-15">
+          <div class="div-109">
+            <div class="div-110">
+              <div class="div-111">Mercado capital</div>
+              <div class="div-112">
+                Directiva sobre mercados de instrumentos financieros (MiFID)
+              </div>
+            </div>
+            <img
+              loading="lazy"
+              srcset="https://cdn.builder.io/api/v1/image/assets/TEMP/37ec62ba73299fdb1257fa90803fb24e4bc6c7218ef43f92cf3a94b9d19afd79?apiKey=122ca1b121464557885065d6851fe1a0&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/37ec62ba73299fdb1257fa90803fb24e4bc6c7218ef43f92cf3a94b9d19afd79?apiKey=122ca1b121464557885065d6851fe1a0&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/37ec62ba73299fdb1257fa90803fb24e4bc6c7218ef43f92cf3a94b9d19afd79?apiKey=122ca1b121464557885065d6851fe1a0&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/37ec62ba73299fdb1257fa90803fb24e4bc6c7218ef43f92cf3a94b9d19afd79?apiKey=122ca1b121464557885065d6851fe1a0&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/37ec62ba73299fdb1257fa90803fb24e4bc6c7218ef43f92cf3a94b9d19afd79?apiKey=122ca1b121464557885065d6851fe1a0&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/37ec62ba73299fdb1257fa90803fb24e4bc6c7218ef43f92cf3a94b9d19afd79?apiKey=122ca1b121464557885065d6851fe1a0&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/37ec62ba73299fdb1257fa90803fb24e4bc6c7218ef43f92cf3a94b9d19afd79?apiKey=122ca1b121464557885065d6851fe1a0&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/37ec62ba73299fdb1257fa90803fb24e4bc6c7218ef43f92cf3a94b9d19afd79?apiKey=122ca1b121464557885065d6851fe1a0&"
+              class="img-20"
+            />
+          </div>
+        </div>
+        <div class="column-16">
+          <div class="div-113">
+            <div class="div-114">
+              <div class="div-115">Análisis</div>
+              <div class="div-116">
+                Banca infinita: conviértase en su propio banquero
+              </div>
+            </div>
+            <img
+              loading="lazy"
+              srcset="https://cdn.builder.io/api/v1/image/assets/TEMP/f878f06d7b508854c1b6792faf14444886f1e7c824bafc635e32ebf3d0ed846b?apiKey=122ca1b121464557885065d6851fe1a0&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/f878f06d7b508854c1b6792faf14444886f1e7c824bafc635e32ebf3d0ed846b?apiKey=122ca1b121464557885065d6851fe1a0&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/f878f06d7b508854c1b6792faf14444886f1e7c824bafc635e32ebf3d0ed846b?apiKey=122ca1b121464557885065d6851fe1a0&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/f878f06d7b508854c1b6792faf14444886f1e7c824bafc635e32ebf3d0ed846b?apiKey=122ca1b121464557885065d6851fe1a0&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/f878f06d7b508854c1b6792faf14444886f1e7c824bafc635e32ebf3d0ed846b?apiKey=122ca1b121464557885065d6851fe1a0&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/f878f06d7b508854c1b6792faf14444886f1e7c824bafc635e32ebf3d0ed846b?apiKey=122ca1b121464557885065d6851fe1a0&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/f878f06d7b508854c1b6792faf14444886f1e7c824bafc635e32ebf3d0ed846b?apiKey=122ca1b121464557885065d6851fe1a0&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/f878f06d7b508854c1b6792faf14444886f1e7c824bafc635e32ebf3d0ed846b?apiKey=122ca1b121464557885065d6851fe1a0&"
+              class="img-21"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="div-117">
+    <div class="div-118">
+      <div class="column">
+        <div class="div-119">
+            información financiera que cubren la optimización de la tecnología
+          <div class="div-120">Suscribir</div>
+          <div class="div-121">
+            ¡Manténgase informado y nunca se pierda una actualización!
+          </div>
+        </div>
+      </div>
+      <div class="column-17">
+        <div class="div-122">
+          <div class="div-123">
+            Una vez al mes le enviaremos episodios recientes de nuestra
+            digital y personas irresistibles que brindan una excelente
+            experiencia al cliente que impacta el resultado final.
+          </div>
+          <div class="div-124">
+            <div class="div-125">Dirección de correo electrónico</div>
+            <div class="div-126">Suscríbete</div>
+          </div>
+          <div class="div-127"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </div>
+</body>

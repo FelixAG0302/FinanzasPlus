@@ -7,9 +7,153 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/FinanzasPlus.styles.css" asp-append-version="true" />
+
+    <!-- Agregar Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
 </head>
+<style>
+
+    .div-2 {
+    @@apply flex justify-between items-center bg-gray-100;
+        padding: 32px 80px;
+       
+    }
+
+    @@media (max-width: 2048px) {
+        .div-2 {
+    @@apply max-w-full;
+            padding: 0 60px;
+        }
+    }
+
+    .div-3 {
+    @@apply text-blue-900 text-2xl font-bold;
+        letter-spacing: -0.96px;
+        padding: 16px 0;
+    }
+
+    .div-4 {
+    @@apply flex flex-col text-gray-700 text-base font-normal whitespace-nowrap text-center;
+        line-height: 120%;
+        margin: auto 0;
+    }
+
+    @@media (max-width: 2048px) {
+        .div-4 {
+    @@apply whitespace-normal;
+        }
+    }
+
+    .div-128 {
+    @@apply bg-blue-900 flex items-center justify-center;
+    }
+
+    @@media (max-width: 2048px) {
+        .div-128 {
+    @@apply max-w-full;
+            padding: 0 20px;
+        }
+    }
+
+    .div-129 {
+    @@apply flex flex-col items-center w-full max-w-md mx-auto my-16;
+    }
+
+    @@media (max-width: 2048px) {
+        .div-129 {
+    @@apply my-10;
+        }
+    }
+
+    .div-130 {
+    @@apply text-white text-5xl font-bold tracking-tight;
+        letter-spacing: -1.92px;
+        font-size:48px;
+        text-align:center;
+        width:auto;
+
+    }
+
+    @@media (max-width: 2048px) {
+        .div-130 {
+    @@apply text-3xl;
+
+        }
+    }
+
+    .div-131 {
+    @@apply self-center flex justify-between mt-12 space-x-4;
+    }
+
+    @@media (max-width: 2048px) {
+        .div-131 {
+    @@apply mt-8;
+        }
+    }
+
+
+    .div-132 {
+    @@apply bg-gray-100 flex items-center justify-center w-full py-4 px-6 text-gray-900 text-sm font-medium;
+    }
+
+    @@media (max-width: 2048px) {
+        .div-132 {
+    @@apply max-w-full;
+            padding: 0 20px;
+        }
+    }
+
+
+    /* Estilos para pegar el footer al final de la pantalla */
+    body {
+    @@apply flex flex-col min-h-screen;
+    }
+
+    footer {
+    @@apply mt-auto;
+        position: sticky;
+    }
+
+
+    .div-5 {
+        display: flex;
+        gap: 20px;
+        justify-content: space-between;
+    }
+
+    @@media (max-width: 2048px) {
+        .div-5 {
+            white-space: initial;
+        }
+    }
+    nav{
+    font-size:2rem;
+        font-family: "Urbanist", sans-serif;
+        font-optical-sizing: auto;
+        font-style: normal;
+    }
+    .div-6 {
+        color: #00255b;
+        font-family: Urbanist, sans-serif;
+        font-weight: 700;
+    }
+
+    .div-7 {
+        font-family: Lexend Deca, sans-serif;
+    }
+
+    .div-8 {
+        font-family: Lexend Deca, sans-serif;
+    }
+
+</style>
 <body>
-    <header>
+    <header class="div-2">
+
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container-fluid">
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">FinanzasPlus</a>
@@ -17,22 +161,22 @@
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-between div-4">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            <a class="nav-link text-dark div-5" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
                         @if (Context.Request.Path == "/" || Context.Request.Path == "/Home/Index")
                         {
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Authentication" asp-action="Login">Login</a>
+                                <a class="nav-link text-dark div-5" asp-area="" asp-controller="Authentication" asp-action="Login">Login</a>
                             </li>
                         }
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Historial" asp-action="HistorialTransacciones">Mis Transacciones</a>
+                            <a class="nav-link text-dark div-5" asp-area="" asp-controller="Historial" asp-action="HistorialTransacciones">Mis Transacciones</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Tarjetas" asp-action="VerTarjetas">Mis Tarjetas</a>
+                            <a class="nav-link text-dark div-5" asp-area="" asp-controller="Tarjetas" asp-action="VerTarjetas">Mis Tarjetas</a>
                         </li>
                     </ul>
                 </div>
@@ -45,11 +189,33 @@
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2024 - FinanzasPlus - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+    <footer class="div-128 bg-gray-800 text-white">
+        <div class="div-129 py-16">
+            <div class="div-130">Finanzas Plus +</div>
+ 
+            <div class="mt-8 flex justify-center space-x-4">
+                <a href="#" class="text-white hover:text-gray-400 transition duration-300">
+                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M10 2a8 8 0 100 16 8 8 0 000-16zM5 10a1 1 0 100 2 1 1 0 000-2zm10-2a2 2 0 11-4 0 2 2 0 014 0zm-6.296 6.823a1 1 0 010-1.646 2.5 2.5 0 002.205-2.205 1 1 0 011.646 0 2.5 2.5 0 002.205 2.205 1 1 0 010 1.646 2.5 2.5 0 00-2.205 2.205 1 1 0 01-1.646 0 2.5 2.5 0 00-2.205-2.205z" clip-rule="evenodd" />
+                    </svg>
+                </a>
+                <a href="#" class="text-white hover:text-gray-400 transition duration-300">
+                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M5 2a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V4a2 2 0 00-2-2H5zm10 2H5v12h10V4zm-3 3a1 1 0 011 1v6a1 1 0 11-2 0V8a1 1 0 011-1zm-5 0a1 1 0 011 1v6a1 1 0 11-2 0V8a1 1 0 011-1z" clip-rule="evenodd" />
+                    </svg>
+                </a>
+                <a href="#" class="text-white hover:text-gray-400 transition duration-300">
+                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M17 2a2 2 0 012 2v12a2 2 0 01-2 2H9.414l-2-2H3a2 2 0 01-2-2V4a2 2 0 012-2h14zM6.414 10L8 8.414 9.586 10l1.414-1.414L12 8.586 10.414 7l1.414-1.414L12 4.172 10.586 5.586 9 4l-1.414 1.414L6.172 6 7.586 7.414 6 8.828 4.586 7.414 3.172 8.828 4.586 10l-1.414 1.414L6.172 12l1.414-1.414L9 13.172l1.414-1.414L10.828 12l1.414-1.414L12 10.828 13.414 12l1.414-1.414L15.828 12l-1.414 1.414L12 14.828 10.586 13.414 9.172 14.828 10.586 16l1.414-1.414L13 13.172l1.414-1.414L14.828 12l1.414-1.414L17.242 12 18.5 10.743 17.242 9.5 16 10.757l-1.242-1.257-1.5 1.5L12.758 10l-1.5-1.5-1.242 1.257L9.5 8.243 8.258 9.5 9.5 10.743 10.758 9.486l1.242 1.257 1.5-1.5L14.243 10l1.5 1.5 1.242-1.257L16.5 9.257 15.242 8l-1.242 1.257L12 6.828 10.757 8l-1.242 1.257L9.5 6.757 8.258 8 9.5 9.243 10.758 8l1.242-1.257L12 9.172 10.758 10.429 9.5 9.186 8.243 10.443 9.5 11.7l1.242-1.257L12 9.586 13.242 10.829 14.5 9.571 13.243 8.329 12 9.586 10.757 8.343 9.5 9.6 10.757 10.843 12 9.586 13.243 10.843 14.5 9.586 13.243 8.329 12 7.072 10.757 8.329 9.5 7.072 8.243 8.329 9.5 9.586 10.757 8.329 12 9.586 13.243 8.329 14.5 9.586 15.757 8.329 14.5 7.072 13.243 8.329 12 7.072 10.757 8.329 9.5 7.072 8.243 8.329 7.757 7.843 9 6.586 10.243 7.843 11.5 6.586 10.243 5.329 9 6.586 7.757 7.843 6.5 6.586 7.757 5.329 9 6.586 10.243 5.329 11.5 6.586 12.757 5.329 11.5 4.072 10.243 5.329 8.757 3.843 7.5 5.1 6.243 3.843 4.757 5.1 3.5 3.843 4.757 2.586 3.5 3.843 2.243 2.586 3.5 1.329 2.243 2.586 0.757 1.1 2.5 0.157 4.743 2.329 6.986 0.157 7.5 1.1 5.257 3.329 8.5 1.1 9.757 2.357 8.5 3.614 7.243 2.357 5.757 4.1 4.5 2.843 5.757 1.586 4.5 0.329 3.243 1.586 1.757 0.1 4 2.329 6.243 0.1 7.757 1.586 6.5 3.843 5.243 2.586 4 3.843 2.757 2.586 1.5 3.843 0.243 2.586 1 1.5 2.757 0.243 4 1.5 5.257 0.243 6.5 1.5 7.757 0.243 9 1.5 10.257 0.243 11.5 1.5 12.757 0.243 14 1.5 15.257 0.243 16.5 1.5 17.757 0.243 19 1.5 18.757 2.843 17.5 1.586 16.243 3.843 15 2.586 13.757 3.843 12.5 2.586 11.243 4.843 10 3.586 8.757 4.843 7.5 3.586 6.243 5.843 5 4.586 3.757 5.843 2.5 4.586 1.243 6.843 0 5.586 1.243 4.329 0 3.072 1.243 1.586 0.757 0.1 2.5 0.1z" clip-rule="evenodd" />
+                    </svg>
+                </a>
+            </div>
+            <div class="mt-8 text-center text-sm text-gray-400">
+                © 2024 FinanzasPlus. Todos los derechos reservados.
+            </div>
         </div>
     </footer>
+
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
