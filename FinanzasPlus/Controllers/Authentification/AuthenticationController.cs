@@ -22,7 +22,7 @@ namespace FinanzasPlus.Controllers.Authentification
                 Name = modelUsuario.Name,
                 Email = modelUsuario.Email,
                 Password = modelUsuario.Password,
-                IdCard = modelUsuario.IdCard
+                PersonType = modelUsuario.PersonType
             };
 
             var rol = await context.Roles
