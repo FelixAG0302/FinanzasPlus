@@ -1,0 +1,42 @@
+﻿@model FinanzasPlus.Models.User;
+
+@{
+    Layout = null;
+}
+<html lang="es">
+<head>
+    <title>Registro</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css">
+</head>
+
+<body>
+    <h2> Registro </h2>
+    <div>
+        <div class="row mt-5 justify-content-center">
+            <div class="col-sm-4">
+                <div class="card">
+                    <div class="card-header text-center fw-bold">
+                        Registro
+                    </div>
+                    <div class="card-body">
+                        <form asp-controller="Authentication" asp-action="Registro" method="post">
+                            <input class="form-control mb-3" type="text" placeholder="Nombre de usuario" required asp-for="Name" />
+                            <input class="form-control mb-3" type="text" placeholder="Correo electrónico" required asp-for="Email" />
+                            <input class="form-control mb-3" type="text" placeholder="Targeta" required asp-for="IdCard" />
+                            <input class="form-control mb-3" type="password" placeholder="Contraseña" required asp-for="Password" />
+                            <input class="form-control mb-3" type="password" placeholder="Confirmar contraseña" required />
+                            <div class="d-grid gap-2 mb-3">
+                                <button class="btn btn-primary" type="submit">¡Regístrame!</button>
+                            </div>
+                            <div class="text-center">
+                                <a asp-controller="Authentication" asp-action="Login">¿Ya tienes una cuenta? ¡Haz clíc aquí!</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
