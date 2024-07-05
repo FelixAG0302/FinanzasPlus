@@ -1,26 +1,27 @@
 using System.Diagnostics;
 using FinanzasPlus.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FinanzasPlus.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
-        {
-            _logger = logger;
-        }
-
         public IActionResult Index()
         {
             return View();
         }
 
-        public IActionResult Privacy()
+        [Authorize(Roles = "USER")]
+        public string UserTest()
         {
-            return View();
+            return "Hello World";
+        }
+
+        [Authorize(Roles = "ADMIN")]
+        public string AdminTest()
+        {
+            return "Hello World";
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

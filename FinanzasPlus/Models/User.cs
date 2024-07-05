@@ -9,9 +9,9 @@ public partial class User
 
     public string Name { get; set; } = null!;
 
-    public string IdCard { get; set; } = null!;
+    public string? IdCard { get; set; }
 
-    public string PersonType { get; set; } = null!;
+    public string? PersonType { get; set; }
 
     public string Password { get; set; } = null!;
 
