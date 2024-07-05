@@ -1,0 +1,220 @@
+﻿
+@{
+    ViewData["Title"] = "Tarjetas";
+}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinanzasPlus - Tarjetas Registradas</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        .container {
+            max-width: auto;
+            max-height: auto;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            overflow: hidden; /* Para abrazar el contenido dentro del contenedor */
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+            header h1 {
+                font-size: 2.5rem;
+                color: #007bff;
+            }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f0f0f0;
+            color: #555;
+            text-transform: uppercase;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            text-align: center;
+            text-decoration: none;
+            margin: 10px 5px;
+            cursor: pointer;
+            border: none;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+            .button:hover {
+                background-color: #0056b3;
+            }
+
+        .search-container {
+            margin-bottom: 20px;
+            text-align: right;
+        }
+
+        .search-input {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 200px;
+            margin-right: 10px;
+        }
+
+        .filter-select {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-right: 10px;
+        }
+
+        footer {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Tarjetas Registradas - FinanzasPlus</h1>
+        </header>
+
+        <div class="search-container">
+            <input type="text" id="searchInput" class="search-input" placeholder="Buscar...">
+            <select id="filterCardType" class="filter-select">
+                <option value="">Filtrar por tipo de tarjeta...</option>
+                <option value="Visa">Visa</option>
+                <option value="Mastercard">Mastercard</option>
+                <option value="American Express">American Express</option>
+            </select>
+            <input type="date" id="filterExpiryDate" class="filter-select">
+            <button onclick="filterTable()" class="button">Filtrar</button>
+        </div>
+
+        <table id="cardTable">
+            <thead>
+                <tr>
+                    <th>Número de Tarjeta</th>
+                    <th>Fecha de Expiración</th>
+                    <th>CVV</th>
+                    <th>Titular</th>
+                    <th>Balance</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Visa **** 1234</td>
+                    <td>12/2025</td>
+                    <td>123</td>
+                    <td>Juan Pérez</td>
+                    <td>$150.00</td>
+
+                </tr>
+                <tr>
+                    <td>Mastercard **** 5678</td>
+                    <td>08/2024</td>
+                    <td>456</td>
+                    <td>Ana Gómez</td>
+                    <td>$100.00</td>
+
+                </tr>
+                <tr>
+                    <td>American Express **** 9012</td>
+                    <td>06/2024</td>
+                    <td>789</td>
+                    <td>Luis Martínez</td>
+                    <td>$25.00</td>
+
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="text-center mt-4">
+
+            <a class="nav-link text-dark" asp-area="" asp-controller="Tarjetas" asp-action="AgregarTarjetas"><button class="btn btn-primary">Agregar nueva</button></a>
+        </div>
+       
+    </div>
+
+    <script>
+        function filterTable() {
+            var input, filter, table, tr, td, i, cardTypeFilter, expiryDateFilter;
+            input = document.getElementById("searchInput");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("cardTable");
+            tr = table.getElementsByTagName("tr");
+
+            // Filtros
+            cardTypeFilter = document.getElementById("filterCardType").value.toUpperCase();
+            expiryDateFilter = document.getElementById("filterExpiryDate").value.toUpperCase();
+
+            // Iterar sobre todas las filas y mostrar/ocultar según los filtros
+            for (i = 1; i < tr.length; i++) { // Empezamos en 1 para omitir el header
+                var showRow = true; // Flag para mostrar u ocultar la fila
+                td = tr[i].getElementsByTagName("td");
+
+                // Verificar cada filtro
+                if (filter) {
+                    var matchFound = false;
+                    for (var j = 0; j < td.length; j++) {
+                        if (td[j].innerText.toUpperCase().indexOf(filter) > -1) {
+                            matchFound = true;
+                            break;
+                        }
+                    }
+                    if (!matchFound) {
+                        showRow = false;
+                    }
+                }
+
+                if (cardTypeFilter && td[0].innerText.toUpperCase().indexOf(cardTypeFilter) === -1) {
+                    showRow = false;
+                }
+                if (expiryDateFilter && td[1].innerText.toUpperCase() !== expiryDateFilter) {
+                    showRow = false;
+                }
+
+                // Mostrar u ocultar la fila según el resultado del filtro
+                if (showRow) {
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                }
+            }
+        }
+
+      
+    </script>
+</body>

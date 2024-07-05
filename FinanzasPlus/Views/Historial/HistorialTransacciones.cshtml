@@ -1,0 +1,268 @@
+﻿@{
+    ViewData["Title"] = "Transacciones";
+}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinanzasPlus - Transacciones</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        .container {
+            max-width: auto;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            overflow: hidden; /* Para abrazar el contenido dentro del contenedor */
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+            header h1 {
+                font-size: 2.5rem;
+                color: #007bff;
+            }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f0f0f0;
+            color: #555;
+            text-transform: uppercase;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            text-align: center;
+            text-decoration: none;
+            margin: 10px 5px;
+            cursor: pointer;
+            border: none;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+            .button:hover {
+                background-color: #0056b3;
+            }
+
+        .search-container {
+            margin-bottom: 20px;
+            text-align: right;
+        }
+
+        .search-input {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 200px;
+            margin-right: 10px;
+        }
+
+        .filter-select {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-right: 10px;
+        }
+
+        footer {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Transacciones - FinanzasPlus</h1>
+        </header>
+
+        <div class="search-container">
+            <input type="text" id="searchInput" class="search-input" placeholder="Buscar...">
+            <select id="filterTransactionType" class="filter-select">
+                <option value="">Filtrar por tipo de transacción...</option>
+                <option value="Compra">Compra</option>
+                <option value="Transferencia">Transferencia</option>
+                <option value="Pago">Pago</option>
+                <option value="Depósito">Depósito</option>
+            </select>
+            <select id="filterCard" class="filter-select">
+                <option value="">Filtrar por tarjeta...</option>
+                <option value="Visa">Visa</option>
+                <option value="Mastercard">Mastercard</option>
+                <option value="American Express">American Express</option>
+            </select>
+            <input type="date" id="filterDate" class="filter-select">
+            <select id="filterPaymentType" class="filter-select">
+                <option value="">Filtrar por tipo de pago...</option>
+                <option value="Débito">Débito</option>
+                <option value="Crédito">Crédito</option>
+            </select>
+            <button onclick="filterTable()" class="button">Filtrar</button>
+        </div>
+
+        <table id="transactionTable">
+            <thead>
+                <tr>
+                    <th>Fecha</th>
+                    <th>Número de Transacción</th>
+                    <th>Tarjeta</th>
+                    <th>Descripción</th>
+                    <th>Tipo de Transacción</th>
+                    <th>Tipo de Pago</th>
+                    <th>Débito</th>
+                    <th>Crédito</th>
+                    <th>Balance Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>01/07/2024</td>
+                    <td>12345</td>
+                    <td>Visa **** 1234</td>
+                    <td>Tienda de comestibles</td>
+                    <td>Compra</td>
+                    <td>Crédito</td>
+                    <td>$50.00</td>
+                    <td>$0.00</td>
+                    <td>$150.00</td>
+                </tr>
+                <tr>
+                    <td>29/06/2024</td>
+                    <td>12346</td>
+                    <td>Mastercard **** 5678</td>
+                    <td>Transferencia a cuenta personal</td>
+                    <td>Transferencia</td>
+                    <td>Débito</td>
+                    <td>$0.00</td>
+                    <td>$200.00</td>
+                    <td>$100.00</td>
+                </tr>
+                <tr>
+                    <td>25/06/2024</td>
+                    <td>12347</td>
+                    <td>American Express **** 9012</td>
+                    <td>Factura de electricidad</td>
+                    <td>Pago</td>
+                    <td>Crédito</td>
+                    <td>$75.00</td>
+                    <td>$0.00</td>
+                    <td>$25.00</td>
+                </tr>
+                <tr>
+                    <td>20/06/2024</td>
+                    <td>12348</td>
+                    <td>Visa **** 3456</td>
+                    <td>Librería online</td>
+                    <td>Compra</td>
+                    <td>Crédito</td>
+                    <td>$30.00</td>
+                    <td>$0.00</td>
+                    <td>$55.00</td>
+                </tr>
+                <tr>
+                    <td>15/06/2024</td>
+                    <td>12349</td>
+                    <td>Visa **** 7890</td>
+                    <td>Salario del mes</td>
+                    <td>Depósito</td>
+                    <td>Crédito</td>
+                    <td>$0.00</td>
+                    <td>$1500.00</td>
+                    <td>$1500.00</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <footer>
+            <p>© 2024 FinanzasPlus. Todos los derechos reservados.</p>
+        </footer>
+    </div>
+
+    <script>
+        function filterTable() {
+            var input, filter, table, tr, td, i, typeFilter, cardFilter, dateFilter, paymentTypeFilter;
+            input = document.getElementById("searchInput");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("transactionTable");
+            tr = table.getElementsByTagName("tr");
+
+            // Filtros
+            typeFilter = document.getElementById("filterTransactionType").value.toUpperCase();
+            cardFilter = document.getElementById("filterCard").value.toUpperCase();
+            dateFilter = document.getElementById("filterDate").value.toUpperCase();
+            paymentTypeFilter = document.getElementById("filterPaymentType").value.toUpperCase();
+
+            // Iterar sobre todas las filas y mostrar/ocultar según los filtros
+            for (i = 1; i < tr.length; i++) { // Empezamos en 1 para omitir el header
+                var showRow = true; // Flag para mostrar u ocultar la fila
+                td = tr[i].getElementsByTagName("td");
+
+                // Verificar cada filtro
+                if (filter) {
+                    var matchFound = false;
+                    for (var j = 0; j < td.length; j++) {
+                        if (td[j].innerText.toUpperCase().indexOf(filter) > -1) {
+                            matchFound = true;
+                            break;
+                        }
+                    }
+                    if (!matchFound) {
+                        showRow = false;
+                    }
+                }
+
+                if (typeFilter && td[4].innerText.toUpperCase() !== typeFilter) {
+                    showRow = false;
+                }
+                if (cardFilter && td[2].innerText.toUpperCase().indexOf(cardFilter) === -1) {
+                    showRow = false;
+                }
+                if (dateFilter && td[0].innerText.toUpperCase() !== dateFilter) {
+                    showRow = false;
+                }
+                if (paymentTypeFilter && td[5].innerText.toUpperCase() !== paymentTypeFilter) {
+                    showRow = false;
+                }
+
+                // Mostrar u ocultar la fila según el resultado del filtro
+                if (showRow) {
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                }
+            }
+        }
+    </script>
+</body>

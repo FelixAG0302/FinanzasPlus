@@ -22,8 +22,17 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
+                        @if (Context.Request.Path == "/" || Context.Request.Path == "/Home/Index")
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Authentication" asp-action="Login">Login</a>
+                            </li>
+                        }
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Authentication" asp-action="Login">Login</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Historial" asp-action="HistorialTransacciones">Mis Transacciones</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Tarjetas" asp-action="VerTarjetas">Mis Tarjetas</a>
                         </li>
                     </ul>
                 </div>

@@ -1,38 +1,167 @@
 ﻿@model FinanzasPlus.Models.User;
 
 @{
-    Layout = null;
+    ViewData["Title"] = "Login";
 }
 
-<html lang="es">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>Inicio de Sesión</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css">
-</head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - FinanzasPlus</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/FinanzasPlus.styles.css" asp-append-version="true" />
+<style>
+    body {
+        background-color: #f4f4f4;
+        padding: 16px; /* Ajuste para seguir la regla del 8 */
+    }
 
+    .container-login {
+        max-width: 650px; /* Ajustar según sea necesario */
+        margin: auto; /* Centrar el contenido */
+        padding: 24px; /* Ajuste para seguir la regla del 8 */
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .card-header {
+        background-color: #007bff;
+        color: #fff;
+        font-size: 1.6rem; /* Ajuste para seguir la regla del 8 */
+        border-radius: 8px 8px 0 0;
+        padding: 16px 0; /* Ajuste para seguir la regla del 8 */
+        text-align: center;
+    }
+
+    .card-body {
+        padding: 24px; /* Ajuste para seguir la regla del 8 */
+    }
+
+    .form-control {
+        border-radius: 8px; /* Ajuste para seguir la regla del 8 */
+        font-size: 1.2rem;
+        margin-bottom: 16px; /* Ajuste para seguir la regla del 8 */
+    }
+
+    .btn-primary {
+        background-color: #007bff;
+        border-color: #007bff;
+        border-radius: 8px; /* Ajuste para seguir la regla del 8 */
+        font-size: 1.2rem;
+        width: 100%; /* Botón ocupa el ancho completo del contenedor */
+        margin-top: 16px; /* Ajuste para seguir la regla del 8 */
+    }
+
+    .btn-primary:hover {
+        background-color: #0056b3;
+        border-color: #0056b3;
+    }
+
+    .text-center {
+        text-align: center;
+    }
+
+    .alert-danger {
+        background-color: #f8d7da;
+        color: #721c24;
+        border-color: #f5c6cb;
+        border-radius: 8px; /* Ajuste para seguir la regla del 8 */
+        padding: 8px 16px; /* Ajuste para seguir la regla del 8 */
+        margin-top: 16px; /* Ajuste para seguir la regla del 8 */
+        font-size: 1.1rem;
+    }
+
+        .btn-toggle-password {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 0 8px 8px 0; /* Ajuste para el borde izquierdo cuadrado */
+            font-size: 1.2rem;
+            padding: 12px 16px; /* Ajuste para seguir la regla del 8 */
+            cursor: pointer;
+            height:75%;
+           
+        }
+
+            .btn-toggle-password:hover {
+                background-color: #0056b3;
+            }
+
+    /* Media Query para dispositivos con ancho menor a 768px (tablets y móviles) */
+    @@media (max-width: 768px) {
+        .container-login {
+            padding: 16px; /* Ajuste para seguir la regla del 8 */
+        }
+
+        .card-header {
+            font-size: 1.4rem; /* Ajuste para seguir la regla del 8 */
+            padding: 12px 0; /* Ajuste para seguir la regla del 8 */
+        }
+
+        .card-body {
+            padding: 20px; /* Ajuste para seguir la regla del 8 */
+        }
+
+        .form-control {
+            font-size: 1rem; /* Ajuste para seguir la regla del 8 */
+            margin-bottom: 12px; /* Ajuste para seguir la regla del 8 */
+        }
+
+        .btn-primary {
+            font-size: 1rem; /* Ajuste para seguir la regla del 8 */
+            margin-top: 12px; /* Ajuste para seguir la regla del 8 */
+        }
+
+        .alert-danger {
+            font-size: 1rem; /* Ajuste para seguir la regla del 8 */
+            padding: 6px 12px; /* Ajuste para seguir la regla del 8 */
+            margin-top: 12px; /* Ajuste para seguir la regla del 8 */
+        }
+
+            .btn-toggle-password {
+                font-size: 1rem; /* Ajuste para seguir la regla del 8 */
+                padding: 10px 14px; /* Ajuste para seguir la regla del 8 */
+            }
+        }
+</style>
+
+</head>
 <body>
-    <h2> Login </h2>
-    <div>
-        <div class="row mt-5 justify-content-center">
-            <div class="col-sm-4">
+    
+    <div class="container">
+        <main role="main" class="pb-3">
+            <div class="container-login mt-5">
                 <div class="card">
-                    <div class="card-header text-center fw-bold">
+                    <div class="card-header">
                         Iniciar Sesión
                     </div>
                     <div class="card-body">
                         <form asp-controller="Authentication" asp-action="Login" method="post">
-                            <input class="form-control mb-3" type="text" placeholder="Nombre de usuario" required asp-for="Name" />
-                            <input class="form-control mb-3" type="password" placeholder="Contraseña" required asp-for="Password" />
-                            <div class="d-grid gap-2 mb-3">
-                                <button class="btn btn-primary" type="submit">¡Inicia mi sesión!</button>
+                            <div class="form-group">
+                                <input class="form-control form-control-lg mb-3" type="text" placeholder="Nombre de usuario" required asp-for="Name" />
+                            </div>
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <input class="form-control form-control-lg mb-3" type="password" placeholder="Contraseña" required asp-for="Password" id="passwordInput" />
+                                    <div class="input-group-append">
+                                        <button class="btn-toggle-password" type="button" onclick="togglePasswordVisibility()" tabindex="-1" id="togglePasswordBtn">Mostrar</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <button class="btn btn-primary btn-lg" type="submit">¡Inicia mi sesión!</button>
                             </div>
                             <div class="text-center">
-                                <a asp-controller="Authentication" asp-action="Registro">¿No tienes una cuenta? ¡Haz clíc aquí!</a>
+                                <a asp-controller="Authentication" asp-action="Registro">¿No tienes una cuenta? ¡Haz clic aquí!</a>
                             </div>
 
                             @if (ViewData["Mensaje"] != null)
                             {
-                                <div class="alert alert-danger text-center" role="alert">
+                                <div class="alert alert-danger text-center mt-3" role="alert">
                                     @ViewData["Mensaje"]
                                 </div>
                             }
@@ -40,7 +169,23 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </main>
     </div>
+
+    <script>
+        function togglePasswordVisibility() {
+            var passwordInput = document.getElementById("passwordInput");
+            var togglePasswordBtn = document.getElementById("togglePasswordBtn");
+
+            if (passwordInput.type === "password") {
+                passwordInput.type = "text";
+                togglePasswordBtn.textContent = "Ocultar";
+            } else {
+                passwordInput.type = "password";
+                togglePasswordBtn.textContent = "Mostrar";
+            }
+        }
+    </script>
+
 </body>
 </html>

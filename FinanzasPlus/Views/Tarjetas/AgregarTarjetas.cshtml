@@ -1,0 +1,57 @@
+﻿
+@{
+    ViewData["Title"] = "Tarjetas";
+}
+
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Agregar Tarjeta - FinanzasPlus</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css">
+</head>
+<body>
+    
+    <div class="container">
+        <div class="row justify-content-center mt-5">
+            <div class="col-sm-6">
+                <div class="card">
+                    <div class="card-header text-center fw-bold">
+                        Agregar Tarjeta
+                    </div>
+                    <div class="card-body">
+                        <form asp-controller="Wallet" asp-action="AgregarTarjeta" method="post">
+                            <div class="mb-3">
+                                <label for="cardNumber" class="form-label">Número de Tarjeta</label>
+                                <input class="form-control" type="text" id="cardNumber" placeholder="Ingrese el número de tarjeta" required  />
+                            </div>
+                            <div class="mb-3">
+                                <label for="cardHolder" class="form-label">Titular de la Tarjeta</label>
+                                <input class="form-control" type="text" id="cardHolder" placeholder="Ingrese el nombre del titular de la tarjeta" required 
+                            </div>
+                            <div class="mb-3">
+                                <label for="expiryDate" class="form-label">Fecha de Vencimiento</label>
+                                <input class="form-control" type="text" id="expiryDate" placeholder="MM/YY" required  />
+                            </div>
+                            <div class="mb-3">
+                                <label for="cvv" class="form-label">CVV</label>
+                                <input class="form-control" type="text" id="cvv" placeholder="Ingrese el CVV" required  />
+                            </div>
+                            <div class="d-grid gap-2">
+                                <button class="btn btn-primary" type="submit">Agregar Tarjeta</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+ 
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
