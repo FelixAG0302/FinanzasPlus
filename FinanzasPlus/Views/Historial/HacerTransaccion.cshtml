@@ -1,0 +1,129 @@
+﻿@{
+    ViewData["Title"] = "Historial";
+}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Realizar Transacción - FinanzasPlus</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css">
+</head>
+<body>
+
+    <div class="container" style="margin-top:-5%">
+
+      
+        <div class="row justify-content-center mt-5">
+            <div class="col-sm-8">
+                <div class="card">
+                    <div class="card-header text-center fw-bold">
+                        Realizar Transacción
+                    </div>
+                    <div class="card-body">
+                        <form asp-controller="Wallet" asp-action="RealizarTransaccion" method="post">
+
+                            <div class="mb-3">
+                                <label for="monto" class="form-label">Monto</label>
+                                <input class="form-control" type="number" id="monto" name="monto" required>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="descripcion" class="form-label">Descripción</label>
+                                <textarea class="form-control" id="descripcion" name="descripcion" rows="3" required></textarea>
+                            </div>
+                            <div class="mb-3">
+
+
+                                <label for="cardNumber" class="form-label">Seleccionar Tarjeta</label>
+                                <select class="form-select" id="cardNumber" required>
+                                    <option value="">Seleccione una tarjeta</option>
+                                    <option value="1234">**** **** **** 1234</option>
+                                    <option value="5678">**** **** **** 5678</option>
+                                    <!-- Opciones adicionales según las tarjetas disponibles -->
+                                </select>
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label">Tipo de Transacción</label>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="tipoTransaccion" id="transferencia" value="transferencia" required>
+                                    <label class="form-check-label" for="transferencia">
+                                        Transferencia
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="tipoTransaccion" id="compra" value="compra" required>
+                                    <label class="form-check-label" for="compra">
+                                        Compra
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="tipoTransaccion" id="pagoServicio" value="pagoServicio" required>
+                                    <label class="form-check-label" for="pagoServicio">
+                                        Pago de Servicio
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div id="detalleTransferencia" class="mb-3 d-none">
+                                <label for="emailTransferencia" class="form-label">Correo del destinatario</label>
+                                <input class="form-control" type="email" id="emailTransferencia" placeholder="Ingrese el correo del destinatario">
+                            </div>
+
+                            <div id="detalleCompra" class="mb-3 d-none">
+                                <label for="empresaCompra" class="form-label">Seleccione la empresa</label>
+                                <select class="form-select" id="empresaCompra">
+                                    <option value="">Seleccione una empresa</option>
+                                    <option value="empresa1">Empresa 1</option>
+                                    <option value="empresa2">Empresa 2</option>
+                                    <!-- Opciones adicionales según las empresas disponibles -->
+                                </select>
+                            </div>
+
+                            <div id="detallePagoServicio" class="mb-3 d-none">
+                                <label for="empresaPagoServicio" class="form-label">Seleccione la empresa</label>
+                                <select class="form-select" id="empresaPagoServicio">
+                                    <option value="">Seleccione una empresa</option>
+                                    <option value="empresaA">Empresa A</option>
+                                    <option value="empresaB">Empresa B</option>
+                                    <!-- Opciones adicionales según las empresas disponibles -->
+                                </select>
+                            </div>
+
+
+
+                            <div class="d-grid gap-2">
+                                <button class="btn btn-primary" type="submit">Realizar Transacción</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Mostrar u ocultar los campos dependiendo del tipo de transacción seleccionada
+        document.querySelectorAll('input[type=radio][name=tipoTransaccion]').forEach(function (radio) {
+            radio.addEventListener('change', function () {
+                document.getElementById('detalleTransferencia').classList.add('d-none');
+                document.getElementById('detalleCompra').classList.add('d-none');
+                document.getElementById('detallePagoServicio').classList.add('d-none');
+
+                if (this.value === 'transferencia') {
+                    document.getElementById('detalleTransferencia').classList.remove('d-none');
+                } else if (this.value === 'compra') {
+                    document.getElementById('detalleCompra').classList.remove('d-none');
+                } else if (this.value === 'pagoServicio') {
+                    document.getElementById('detallePagoServicio').classList.remove('d-none');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

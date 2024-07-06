@@ -8,5 +8,9 @@ namespace FinanzasPlus.Controllers.Historial
         {
             return View();
         }
+        public IActionResult HacerTransaccion()
+        {
+            return View();
+        }
     }
 }

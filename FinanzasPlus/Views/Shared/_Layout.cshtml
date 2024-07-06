@@ -16,14 +16,21 @@
 
 </head>
 <style>
+    nav li{
+    margin-right:2%}
 
+
+   .nav-item{
+    
+    color:dodgerblue;
+    }
     .div-2 {
     @@apply flex justify-between items-center bg-gray-100;
         padding: 32px 80px;
        
     }
 
-    @@media (max-width: 2048px) {
+    @@media (max-width: 1600px) {
         .div-2 {
     @@apply max-w-full;
             padding: 0 60px;
@@ -42,7 +49,7 @@
         margin: auto 0;
     }
 
-    @@media (max-width: 2048px) {
+    @@media (max-width: 1600px) {
         .div-4 {
     @@apply whitespace-normal;
         }
@@ -52,7 +59,7 @@
     @@apply bg-blue-900 flex items-center justify-center;
     }
 
-    @@media (max-width: 2048px) {
+    @@media (max-width: 1600px) {
         .div-128 {
     @@apply max-w-full;
             padding: 0 20px;
@@ -63,7 +70,7 @@
     @@apply flex flex-col items-center w-full max-w-md mx-auto my-16;
     }
 
-    @@media (max-width: 2048px) {
+    @@media (max-width: 1600px) {
         .div-129 {
     @@apply my-10;
         }
@@ -78,7 +85,7 @@
 
     }
 
-    @@media (max-width: 2048px) {
+    @@media (max-width: 1600px) {
         .div-130 {
     @@apply text-3xl;
 
@@ -89,7 +96,7 @@
     @@apply self-center flex justify-between mt-12 space-x-4;
     }
 
-    @@media (max-width: 2048px) {
+    @@media (max-width: 1600px) {
         .div-131 {
     @@apply mt-8;
         }
@@ -100,7 +107,7 @@
     @@apply bg-gray-100 flex items-center justify-center w-full py-4 px-6 text-gray-900 text-sm font-medium;
     }
 
-    @@media (max-width: 2048px) {
+    @@media (max-width: 1600px) {
         .div-132 {
     @@apply max-w-full;
             padding: 0 20px;
@@ -109,9 +116,7 @@
 
 
     /* Estilos para pegar el footer al final de la pantalla */
-    body {
-    @@apply flex flex-col min-h-screen;
-    }
+  
 
     footer {
     @@apply mt-auto;
@@ -125,13 +130,13 @@
         justify-content: space-between;
     }
 
-    @@media (max-width: 2048px) {
+    @@media (max-width: 1600px) {
         .div-5 {
             white-space: initial;
         }
     }
     nav{
-    font-size:2rem;
+    font-size:1.5rem;
         font-family: "Urbanist", sans-serif;
         font-optical-sizing: auto;
         font-style: normal;
@@ -156,28 +161,28 @@
 
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">FinanzasPlus</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+ 
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-between div-4">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark div-5" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Finanzas Plus</a>
                         </li>
                         @if (Context.Request.Path == "/" || Context.Request.Path == "/Home/Index")
                         {
                             <li class="nav-item">
-                                <a class="nav-link text-dark div-5" asp-area="" asp-controller="Authentication" asp-action="Login">Login</a>
+                                <a class="nav-link" asp-area="" asp-controller="Authentication" asp-action="Login">Login</a>
                             </li>
                         }
                         <li class="nav-item">
-                            <a class="nav-link text-dark div-5" asp-area="" asp-controller="Historial" asp-action="HistorialTransacciones">Mis Transacciones</a>
+                            <a class="nav-link" asp-area="" asp-controller="Historial" asp-action="HacerTransaccion">Hacer transacción</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark div-5" asp-area="" asp-controller="Tarjetas" asp-action="VerTarjetas">Mis Tarjetas</a>
+                            <a class="nav-link" asp-area="" asp-controller="Historial" asp-action="HistorialTransacciones">Movimientos</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Tarjetas" asp-action="VerTarjetas">Cartera</a>
+                        </li>
+                      
                     </ul>
                 </div>
             </div>
