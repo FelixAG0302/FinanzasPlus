@@ -67,11 +67,20 @@ public partial class FinancesContext : DbContext
             entity.ToTable("cards");
 
             entity.Property(e => e.Id).HasColumnName("id");
+            entity.Property(e => e.Amount)
+                .HasDefaultValue(0.00m)
+                .HasColumnType("decimal(19, 4)")
+                .HasColumnName("amount");
             entity.Property(e => e.CardNumber)
                 .HasMaxLength(16)
                 .IsUnicode(false)
                 .HasColumnName("card_number");
             entity.Property(e => e.CutoffDay).HasColumnName("cutoff_day");
+            entity.Property(e => e.Cvv)
+                .HasMaxLength(3)
+                .IsUnicode(false)
+                .IsFixedLength()
+                .HasColumnName("CVV");
             entity.Property(e => e.UserId).HasColumnName("user_id");
 
             entity.HasOne(d => d.User).WithMany(p => p.Cards)
@@ -177,6 +186,10 @@ public partial class FinancesContext : DbContext
             entity.Property(e => e.Cutoff)
                 .HasDefaultValueSql("(getdate())")
                 .HasColumnName("cutoff");
+            entity.Property(e => e.Email)
+                .HasMaxLength(50)
+                .IsUnicode(false)
+                .HasColumnName("email");
             entity.Property(e => e.IdCard)
                 .HasMaxLength(11)
                 .IsUnicode(false)
@@ -185,6 +198,10 @@ public partial class FinancesContext : DbContext
                 .HasMaxLength(255)
                 .IsUnicode(false)
                 .HasColumnName("name");
+            entity.Property(e => e.Password)
+                .HasMaxLength(20)
+                .IsUnicode(false)
+                .HasColumnName("password");
             entity.Property(e => e.PersonType)
                 .HasMaxLength(50)
                 .IsUnicode(false)
